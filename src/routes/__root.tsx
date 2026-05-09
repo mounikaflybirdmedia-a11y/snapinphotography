@@ -1,4 +1,4 @@
-import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
+import { Outlet, Link, createRootRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 
@@ -27,50 +27,9 @@ function NotFoundComponent() {
 }
 
 export const Route = createRootRoute({
-  head: () => ({
-    meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Snap In Photography — Cinematic Wedding & Film Stills Photography Khammam" },
-      { name: "description", content: "Snap In Photography by Shiva — wedding, pre-wedding, events & maternity photography in Khammam, Telangana. Still photography for Ayana Movies (Bimla Nayak, Jai Hanuman, Nagabandam)." },
-      { name: "author", content: "Shiva" },
-      { property: "og:title", content: "Snap In Photography — Cinematic Wedding & Film Stills Photography Khammam" },
-      { property: "og:description", content: "Snap In Photography by Shiva — wedding, pre-wedding, events & maternity photography in Khammam, Telangana. Still photography for Ayana Movies (Bimla Nayak, Jai Hanuman, Nagabandam)." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Snap In Photography — Cinematic Wedding & Film Stills Photography Khammam" },
-      { name: "twitter:description", content: "Snap In Photography by Shiva — wedding, pre-wedding, events & maternity photography in Khammam, Telangana. Still photography for Ayana Movies (Bimla Nayak, Jai Hanuman, Nagabandam)." },
-    ],
-    links: [
-      {
-        rel: "icon",
-        type: "image/png",
-        href: "/favicon.png",
-      },
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
-    ],
-  }),
-  shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
 });
-
-function RootShell({ children }: { children: React.ReactNode }) {
-  return (
-    <html lang="en">
-      <head>
-        <HeadContent />
-      </head>
-      <body>
-        {children}
-        <Scripts />
-      </body>
-    </html>
-  );
-}
 
 function RootComponent() {
   return (
@@ -83,3 +42,4 @@ function RootComponent() {
     </div>
   );
 }
+
